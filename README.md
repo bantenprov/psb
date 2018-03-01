@@ -32,12 +32,10 @@ $ git clone https://github.com/bantenprov/psb.git
          * Laravel Framework Service Providers...
          */
 //==
-
         Bantenprov\Psb\PsbServiceProvider::class,
 ~~~
 
 ## Publish vendor command :
 ~~~
 $ php artisan vendor:publish --tag=psb-assets --force
-
 ~~~

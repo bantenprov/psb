@@ -33,7 +33,7 @@ $ git clone https://github.com/bantenprov/psb.git
          */
 //==
 
-        Bantenprov\DashboardTanaraStatistic\PsbServiceProvider::class,
+        Bantenprov\Psb\PsbServiceProvider::class,
 ~~~
 
 ## Publish vendor command :

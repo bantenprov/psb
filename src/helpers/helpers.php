@@ -1,8 +1,8 @@
 <?php
 
-if (! function_exists('dashboardTanaraStatistic')) {
-    function dashboardTanaraStatistic()
+if (! function_exists('Psb')) {
+    function Psb()
     {
-        return 'Welcome to function dashboardTanaraStatistic() for Bantenprov\Psb package';
+        return 'Welcome to function Psb() for Bantenprov\Psb package';
     }
 }

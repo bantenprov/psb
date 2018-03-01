@@ -14,6 +14,13 @@ PSB
 
 ## Install
 using composer
+
+Install Tanara
+~~~
+$ composer create-project bantenprov/tanara:dev-dev
+~~~
+
+Install PSB
 ~~~
 $ composer require bantenprov/psb:"dev-master"
 ~~~

@@ -136,7 +136,7 @@ class PsbServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packageAssetsPath => resource_path('/assets'),
-        ], 'dtstatistik-assets');
+        ], 'psb-assets');
     }
 
     /**

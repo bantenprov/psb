@@ -25,4 +25,19 @@ $ git clone https://github.com/bantenprov/psb.git
 ~~~
 
 ## Edit config/App.php
+~~~
+'providers' => [
 
+        /*
+         * Laravel Framework Service Providers...
+         */
+//==
+
+        Bantenprov\DashboardTanaraStatistic\PsbServiceProvider::class,
+~~~
+
+## Publish vendor command :
+~~~
+$ php artisan vendor:publish --tag=psb-assets --force
+
+~~~

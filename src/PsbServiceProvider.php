@@ -42,15 +42,15 @@ class PsbServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('dashboard-tanara-statistic', function ($app) {
+        $this->app->singleton('psb', function ($app) {
             return new Psb;
         });
 
-        $this->app->singleton('command.dashboard-tanara-statistic', function ($app) {
+        $this->app->singleton('command.psb', function ($app) {
             return new PsbCommand;
         });
 
-        $this->commands('command.dashboard-tanara-statistic');
+        $this->commands('command.psb');
     }
 
     /**
@@ -61,8 +61,8 @@ class PsbServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'dashboard-tanara-statistic',
-            'command.dashboard-tanara-statistic',
+            'psb',
+            'command.psb',
         ];
     }
 
@@ -84,9 +84,9 @@ class PsbServiceProvider extends ServiceProvider
     protected function configHandle()
     {
         $packageConfigPath = __DIR__.'/config/config.php';
-        $appConfigPath     = config_path('dashboard-tanara-statistic.php');
+        $appConfigPath     = config_path('psb.php');
 
-        $this->mergeConfigFrom($packageConfigPath, 'dashboard-tanara-statistic');
+        $this->mergeConfigFrom($packageConfigPath, 'psb');
 
         $this->publishes([
             $packageConfigPath => $appConfigPath,
@@ -102,10 +102,10 @@ class PsbServiceProvider extends ServiceProvider
     {
         $packageTranslationsPath = __DIR__.'/resources/lang';
 
-        $this->loadTranslationsFrom($packageTranslationsPath, 'dashboard-tanara-statistic');
+        $this->loadTranslationsFrom($packageTranslationsPath, 'psb');
 
         $this->publishes([
-            $packageTranslationsPath => resource_path('lang/vendor/dashboard-tanara-statistic'),
+            $packageTranslationsPath => resource_path('lang/vendor/psb'),
         ], 'lang');
     }
 
@@ -118,10 +118,10 @@ class PsbServiceProvider extends ServiceProvider
     {
         $packageViewsPath = __DIR__.'/resources/views';
 
-        $this->loadViewsFrom($packageViewsPath, 'dashboard-tanara-statistic');
+        $this->loadViewsFrom($packageViewsPath, 'psb');
 
         $this->publishes([
-            $packageViewsPath => resource_path('views/vendor/dashboard-tanara-statistic'),
+            $packageViewsPath => resource_path('views/vendor/psb'),
         ], 'views');
     }
 

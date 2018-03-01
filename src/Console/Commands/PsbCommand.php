@@ -16,7 +16,7 @@ class PsbCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'bantenprov:dashboard-tanara-statistic';
+    protected $signature = 'bantenprov:psb';
 
     /**
      * The console command description.

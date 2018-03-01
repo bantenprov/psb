@@ -17,6 +17,6 @@ class Psb extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'dashboard-tanara-statistic';
+        return 'psb';
     }
 }

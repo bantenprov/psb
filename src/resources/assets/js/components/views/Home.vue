@@ -1,49 +1,53 @@
 <template>
 	<div>
     <div class="home-header">
-      <nav class="home-header-navbar navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-         <div class="container">
+
+      <nav class="home-header-navbar navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
           <router-link class="navbar-brand d-flex flex-row align-items-center text-uppercase" to="/" exact>
             <img class="mr-2" src="/images/logo.png" width="36" height="36">
-            <span>PPDB Provinsi Banten</span>
+            <span>Tanara</span>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <router-link class="nav-link" :to="{ name: 'sign-up' }"><i class="fa fa-user-plus" aria-hidden="true"></i> Create account</router-link>
+              <li v-if="authenticated" class="nav-item">
+                <a @click.prevent="logout" class="nav-link" href="#">
+                  <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Logout
+                </a>
               </li>
+              <template v-else>
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="{ name: 'register' }"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> Register</router-link>
+                </li>
+              </template>
             </ul>
           </div>
-          </div> <!--container-->
-        </nav><!-- /.navbar -->
-      <div class="container">
-  	    
+        </div><!-- /.container -->
+      </nav><!-- /.navbar -->
 
-        <div class="home-header-content">
-          <h1 class="home-header-title">PPDB <strong> 2018</strong></h1>
-          <p class="home-header-description mb-5 wow fadeInUp">Pendaftaran Peserta Didik Baru <br>SMA SMK Negeri Provinsi Banten.</p>
-          <p class="mb-0">
-            <router-link class="wow fadeInLeft btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
-            <router-link class="wow fadeInRight btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'sign-in' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</router-link>
-          </p>
-          <Countdown akhir="June 01, 2018"></Countdown> 
-          
-          
+      <div class="container">
+        <div class="home-header-content d-flex flex-column justify-content-center py-5">
+          <div>
+            <h1 class="home-header-title">Tanara</h1>
+            <p class="home-header-description mb-5">Tanara adalah sebuah kecamatan di Kabupaten Serang, Provinsi Banten, Indonesia. Daerah ini sangat terkenal karena ulama besar, <strong>Syaikh Nawawi al-Bantani</strong>, guru bagi para ulama Indonesia dan guru besar di Mekkah, lahir di sini.</p>
+            <p class="mb-0">
+              <router-link class="btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInLeft" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
+              <router-link v-if="!authenticated" class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInRight" :to="{ name: 'login' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</router-link>
+            </p>
+          </div>
         </div>
       </div><!-- /.container -->
 
-      <!--<svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeHeaderCurve" role="presentation" aria-hidden="true">
+      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeHeaderCurve" role="presentation" aria-hidden="true">
         <polygon points="1280 0 1280 70 0 70"></polygon>
-      </svg>-->
+      </svg>
 	  </div><!-- /.banner -->
 
 		<section class="home-section home-section-1">
 	    <div class="container">
-      
-            
         <h2>Wilayah</h2>
         <p class="lead">Terletak disekitar Sungai Cidurian yang bermuara ke Laut Jawa. Pada tahun 2010 wilayah ini terbagi menjadi beberapa desa.</p>
         <img class="home-section-img" src="https://placehold.it/1200x630/777/eee/?text=IMAGE" alt="Image">
@@ -159,9 +163,40 @@
 </template>
 
 <script>
-import Countdown from 'vuejs-countdown'
+import { mapGetters } from 'vuex';
 
 export default {
-  components: { Countdown }
+  computed: mapGetters({
+    user: 'authUser',
+    authenticated: 'authCheck'
+  }),
+  methods: {
+    async logout () {
+      // Log out the user.
+      await this.$store.dispatch('logout')
+
+      // Redirect to login.
+      this.$router.push({ name: 'login' })
+    }
+  },
+  mounted () {
+    var scrollpos = window.scrollY;
+    var header = document.querySelector('.home-header-navbar');
+
+    header.classList.add('animated');
+
+    window.addEventListener('scroll', function() {
+      scrollpos = window.scrollY;
+
+      if (scrollpos > 78) {
+        header.classList.remove('bg-transparent');
+        header.classList.add('fixed-top', 'slideInDown', 'bg-dark');
+      } else {
+        header.classList.remove('fixed-top', 'slideInDown');
+        header.classList.add('bg-transparent');
+        header.classList.remove('bg-dark');
+      }
+    });
+  }
 }
 </script>

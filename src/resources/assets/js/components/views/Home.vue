@@ -23,22 +23,25 @@
   	    
 
         <div class="home-header-content">
-          <h1 class="home-header-title">PSB</h1>
-          <p class="home-header-description mb-5 wow fadeInUp">Pendaftaran Peserta Didik Baru SMA SMK Negeri Provinsi Banten.</p>
+          <h1 class="home-header-title">PPDB <strong> 2018</strong></h1>
+          <p class="home-header-description mb-5 wow fadeInUp">Pendaftaran Peserta Didik Baru <br>SMA SMK Negeri Provinsi Banten.</p>
           <p class="mb-0">
             <router-link class="wow fadeInLeft btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
             <router-link class="wow fadeInRight btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'sign-in' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</router-link>
           </p>
+          <Countdown deadline="June 01, 2018"></Countdown> 
+
         </div>
       </div><!-- /.container -->
 
-      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeHeaderCurve" role="presentation" aria-hidden="true">
+      <!--<svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeHeaderCurve" role="presentation" aria-hidden="true">
         <polygon points="1280 0 1280 70 0 70"></polygon>
-      </svg>
+      </svg>-->
 	  </div><!-- /.banner -->
 
 		<section class="home-section home-section-1">
 	    <div class="container">
+            
         <h2>Wilayah</h2>
         <p class="lead">Terletak disekitar Sungai Cidurian yang bermuara ke Laut Jawa. Pada tahun 2010 wilayah ini terbagi menjadi beberapa desa.</p>
         <img class="home-section-img" src="https://placehold.it/1200x630/777/eee/?text=IMAGE" alt="Image">
@@ -152,3 +155,11 @@
 
 	</div>
 </template>
+
+<script>
+import Countdown from 'vuejs-countdown'
+
+export default {
+  components: { Countdown }
+}
+</script>

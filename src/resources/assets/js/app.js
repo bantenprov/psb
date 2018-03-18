@@ -48,6 +48,7 @@ import VuetableFilterBar from './add-ons/vue-table/FilterBar.vue';
 
 import Wowjs from './add-ons/wow-js/wow.js';
 
+
 import routes from './routes';
 import './components';
 

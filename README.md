@@ -45,4 +45,5 @@ $ git clone https://github.com/bantenprov/psb.git
 ## Publish vendor command :
 ~~~
 $ php artisan vendor:publish --tag=psb-assets --force
+$ php artisan vendor:publish --tag=psb-public --force
 ~~~

@@ -1,11 +1,11 @@
 <template>
 	<div>
     <div class="home-header">
-      <div class="container">
-  	    <nav class="home-header-navbar navbar navbar-expand-lg navbar-dark bg-transparent">
+      <nav class="home-header-navbar navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+         <div class="container">
           <router-link class="navbar-brand d-flex flex-row align-items-center text-uppercase" to="/" exact>
             <img class="mr-2" src="/images/logo.png" width="36" height="36">
-            <span>PSB</span>
+            <span>PPDB Provinsi Banten</span>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,14 +17,17 @@
               </li>
             </ul>
           </div>
-  	    </nav><!-- /.navbar -->
+          </div> <!--container-->
+        </nav><!-- /.navbar -->
+      <div class="container">
+  	    
 
         <div class="home-header-content">
           <h1 class="home-header-title">PSB</h1>
-          <p class="home-header-description mb-5">Pendaftaran Peserta Didik Baru SMA SMK Negeri Provinsi Banten.</p>
+          <p class="home-header-description mb-5 wow fadeInUp">Pendaftaran Peserta Didik Baru SMA SMK Negeri Provinsi Banten.</p>
           <p class="mb-0">
-            <router-link class="btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
-            <router-link class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'sign-in' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</router-link>
+            <router-link class="wow fadeInLeft btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
+            <router-link class="wow fadeInRight btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'sign-in' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</router-link>
           </p>
         </div>
       </div><!-- /.container -->

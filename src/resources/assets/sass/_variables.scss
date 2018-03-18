@@ -1,0 +1,60 @@
+//# Customize Bootstrap ===================================
+
+$enable-rounded:            false;
+
+//# App variables ================================
+
+//
+// Form auth
+//
+
+$form-auth-padding:         15px !default;
+$form-auth-bg-color:        #fff !default;
+$form-auth-border-width:    1px !default;
+$form-auth-border-color:    #ddd !default;
+$form-auth-box-shadow:      0 0 1px rgba(0,0,0,.45) !default;
+
+// Sizes
+
+$form-auth-sm-max-width:    330px !default;
+$form-auth-md-max-width:    450px !default;
+$form-auth-lg-max-width:    600px !default;
+
+//
+// Navmenu
+//
+
+$navmenu-padding-x:                 1.25rem !default;
+$navmenu-padding-y:                 1rem !default;
+$navmenu-border-width:              1px !default;
+$navmenu-border-color:              rgba(0,0,0,.05) !default;
+$navmenu-spacer-y:                  $navmenu-padding-y !default;
+
+$navmenu-brand-padding-x:           1.25rem !default;
+$navmenu-brand-padding-y:           .5rem !default;
+$navmenu-brand-font-size:           18px !default;
+
+$navmenu-header-margin-bottom:      .5rem !default;
+
+$navmenu-link-padding-x:            1.25rem !default;
+$navmenu-link-padding-y:            .5rem !default;
+$navmenu-link-sm-padding-x:         $navmenu-link-padding-x !default;
+$navmenu-link-sm-padding-y:         .25rem !default;
+
+$navmenu-light-color:                 rgba(0,0,0,.5) !default;
+$navmenu-light-hover-color:           rgba(0,0,0,.7) !default;
+$navmenu-light-active-color:          rgba(0,0,0,.9) !default;
+$navmenu-light-disabled-color:        rgba(0,0,0,.3) !default;
+$navmenu-light-header-color:          rgba(0,0,0,.4) !default;
+$navmenu-light-item-border-color:     rgba(0,0,0,.05) !default;
+$navmenu-light-item-hover-color:      $navmenu-light-item-border-color !default;
+$navmenu-light-divider-border-color:  rgba(0,0,0,.05) !default;
+
+$navmenu-dark-color:                  rgba(255,255,255,.5) !default;
+$navmenu-dark-hover-color:            rgba(255,255,255,.75) !default;
+$navmenu-dark-active-color:           rgba(255,255,255,1) !default;
+$navmenu-dark-disabled-color:         rgba(255,255,255,.25) !default;
+$navmenu-dark-header-color:           rgba(255,255,255,.4) !default;
+$navmenu-dark-item-border-color:      rgba(0,0,0,.15) !default;
+$navmenu-dark-item-hover-color:       $navmenu-dark-item-border-color !default;
+$navmenu-dark-divider-border-color:   rgba(0,0,0,.15) !default;

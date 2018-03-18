@@ -31,7 +31,7 @@
       <div class="container">
         <div class="home-header-content d-flex flex-column justify-content-center py-5">
           <div>
-            <h1 class="home-header-title">Tanara</h1>
+            <h1 class="home-header-title">PPDB 2018</h1>
             <p class="home-header-description mb-5">Tanara adalah sebuah kecamatan di Kabupaten Serang, Provinsi Banten, Indonesia. Daerah ini sangat terkenal karena ulama besar, <strong>Syaikh Nawawi al-Bantani</strong>, guru bagi para ulama Indonesia dan guru besar di Mekkah, lahir di sini.</p>
             <p class="mb-0">
               <router-link class="btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInLeft" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>

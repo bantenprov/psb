@@ -6,7 +6,7 @@
         <div class="container">
           <router-link class="navbar-brand d-flex flex-row align-items-center text-uppercase" to="/" exact>
             <img class="mr-2" src="/images/logo.png" width="36" height="36">
-            <span>Tanara</span>
+            <span>PPDB 2018</span>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
         <div class="home-header-content d-flex flex-column justify-content-center py-5">
           <div>
             <h1 class="home-header-title">PPDB 2018</h1>
-            <p class="home-header-description mb-5">Tanara adalah sebuah kecamatan di Kabupaten Serang, Provinsi Banten, Indonesia. Daerah ini sangat terkenal karena ulama besar, <strong>Syaikh Nawawi al-Bantani</strong>, guru bagi para ulama Indonesia dan guru besar di Mekkah, lahir di sini.</p>
+            <p class="home-header-description mb-5">PPDB 2018 adalah sebuah kecamatan di Kabupaten Serang, Provinsi Banten, Indonesia. Daerah ini sangat terkenal karena ulama besar, <strong>Syaikh Nawawi al-Bantani</strong>, guru bagi para ulama Indonesia dan guru besar di Mekkah, lahir di sini.</p>
             <p class="mb-0">
               <router-link class="btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInLeft" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
               <router-link v-if="!authenticated" class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInRight" :to="{ name: 'login' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</router-link>

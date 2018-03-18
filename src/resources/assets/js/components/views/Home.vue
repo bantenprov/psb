@@ -29,8 +29,9 @@
             <router-link class="wow fadeInLeft btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
             <router-link class="wow fadeInRight btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0" :to="{ name: 'sign-in' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</router-link>
           </p>
-          <Countdown deadline="June 01, 2018"></Countdown> 
-
+          <Countdown akhir="June 01, 2018"></Countdown> 
+          
+          
         </div>
       </div><!-- /.container -->
 
@@ -41,6 +42,7 @@
 
 		<section class="home-section home-section-1">
 	    <div class="container">
+      
             
         <h2>Wilayah</h2>
         <p class="lead">Terletak disekitar Sungai Cidurian yang bermuara ke Laut Jawa. Pada tahun 2010 wilayah ini terbagi menjadi beberapa desa.</p>

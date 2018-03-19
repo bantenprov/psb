@@ -33,7 +33,8 @@ class PsbServiceProvider extends ServiceProvider
         $this->viewHandle();
         $this->assetHandle();
         $this->migrationHandle();
-		$this->publicHandle();
+        //$this->publicHandle();
+        $this->publicImageHandle();
     }
 
     /**
@@ -155,12 +156,22 @@ class PsbServiceProvider extends ServiceProvider
             $packageMigrationsPath => database_path('migrations')
         ], 'migrations');
     }
+/*
 	public function publicHandle()
     {
         $packagePublicPath = __DIR__.'/public';
 
         $this->publishes([
             $packagePublicPath => base_path('public')
+        ], 'psb-public');
+    }
+ */
+    public function publicImageHandle()
+    {
+        $packagePublicPath = __DIR__.'/public/images';
+
+        $this->publishes([
+            $packagePublicPath => base_path('public/images')
         ], 'psb-public');
     }
 }

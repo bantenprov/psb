@@ -172,6 +172,6 @@ class PsbServiceProvider extends ServiceProvider
 
         $this->publishes([
             $packagePublicPath => base_path('public/images')
-        ], 'psb-public-mage');
+        ], 'psb-public-image');
     }
 }

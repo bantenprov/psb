@@ -13,6 +13,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ml-auto">
+               <li class="nav-item"><a   class="nav-link" href="#asas"">Prinsip Utama</a></li>
+               
               <li v-if="authenticated" class="nav-item">
                 <a @click.prevent="logout" class="nav-link" href="#">
                   <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i> Logout
@@ -20,7 +22,7 @@
               </li>
               <template v-else>
                 <li class="nav-item">
-                  <router-link class="nav-link" :to="{ name: 'register' }"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> Register</router-link>
+                  <router-link class="nav-link" :to="{ name: 'login' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</router-link>
                 </li>
               </template>
             </ul>
@@ -33,10 +35,12 @@
           <div>
             <h1 class="home-header-title">PPDB <strong class="text-warning"> 2018</strong></h1>
           <p class="home-header-description mb-5 wow fadeInUp">Pendaftaran Peserta Didik Baru <br>SMA SMK Negeri Provinsi Banten.</p>
-            <Countdown deadline="June 01, 2018"></Countdown>
-            <p class="mb-0">
+            <p class="home-header-description mb-5">PPDB akan dimulai dalam:<br>
+            <Countdown class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated zoomIn" deadline="June 01, 2018"></Countdown></p>
+            <div class="clearfix"></div>
+            <p class="mb-0 wow fadeInDown">
               <router-link class="btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInLeft" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
-              <router-link v-if="!authenticated" class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInRight" :to="{ name: 'login' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</router-link>
+              <router-link v-if="!authenticated" class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInRight" :to="{ name: 'register' }"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> Daftar</router-link>
             </p>
           </div>
         </div>
@@ -45,7 +49,7 @@
       
 	  </div><!-- /.banner -->
 
-		<section class="home-section home-section-1a">
+		<section id="asas" class="home-section home-section-1a">
 	    <div class="container">
         <h2>Asas PPDB</h2>
         <p class="lead">Pendidikan merupakan hak setiap warga negara yang harus dipenuhi pemerintah dengan tidak memandang perbedaan suku, ras, agama, maupun ekonomi.</p>
@@ -70,20 +74,49 @@
 	    </div>      
 		</section>
 
-		<section class="home-section home-section-2">
+		<section class="home-section home-section-2a">
 	    <div class="container">
-        <h2>Ulama</h2>
-        <p class="lead">Karena kemasyhurannya, <strong>Syekh Nawawi al-Bantani</strong> kemudian dijuluki Sayyid Ulama al-Hijaz (Pemimpin Ulama Hijaz), al-Imam al-Muhaqqiq wa al-Fahhamah al-Mudaqqiq (Imam yang Mumpuni ilmunya), A'yan Ulama al-Qarn al-Ram Asyar li al-Hijrah (Tokoh Ulama Abad 14 Hijriyah), hingga Imam Ulama al-Haramain, (Imam 'Ulama Dua Kota Suci).</p>
-	      <img class="home-section-img" src="https://placehold.it/1200x630/eee/777/?text=IMAGE" alt="Image">
+         <div class="section-title text-center wow fadeInDown">
+              <h4>Tentang <strong>PPDB</strong> Online</h4>
+              <div class="clearfix"></div>
+              <p >PPDB Online adalah Sebuah sistem Aplikasi penerimaan Calon Siswa Baru SMA dan SMK Negeri Se-Provinsi Banten, Pelaksanaan PPDB online merupakan kolaborasi antara <a href="http://dindikbud.bantenprov.go.id" target="_blank"> Dindikbud</a> dan <a href="https://diskominfo.bantenprov.go.id/" target="_blank">Diskominfosp</a> Provinsi Banten.</p>
+            </div>
+            <div class="row">
+              <div class="col-md-6 wow fadeInLeft"> <img src="/images/tentang2.png" class="img-responsive"> </div>
+              <div class="col-md-6 wow fadeInRight">
+                  <h4 class="ratakiri">Kenapa Online ?</h4>
+                  <p class="ratakirikanan">Semangat Utama adalah keterbukaan sistem dan Informasi dalam proses seleksi Calon Siswa Baru di SMA/SMK Negeri Se-Provinsi Banten. Tujuannya adalah transparansi yaitu siapapun kapan dan dimanapun setiap orang dapat melihat hasil dari proses seleksi sampai tahap akhir</p>
+                  <div class="space"></div>
+                  <p class="ratakirikanan">Untuk Mendukung semua itu kami telah berusaha sebaik mungkin dengan mempersiapkan Hardware maupun software yang memadai diantaranya:</p>
+                  <div class="space"></div><div class="list-style">
+                    <div class="row ratakirikanan">
+                      <div class="col-lg-6 col-sm-6 col-xs-12">
+                        <ul>
+                          <li>Peningkatatan Hardware dan software Server</li>
+                          <li>Peningkatan Bandwidth</li>
+                          <li>Sistem Aplikasi yang mudah dan cepat diakses</li>
+                          <li>Penyederhaan Sistem Seleksi</li>
+                          <li>Helpdek ditiap Kabupaten / Kota</li>
+                        </ul>
+                      </div>
+                      <div class="col-lg-6 col-sm-6 col-xs-12">
+                        <ul>
+                          <li>Data Peringkat Realtime setelah aktivasi dari sekolah tujuan</li>
+                          <li>Calon Siswa dapat memantau dan pindah tujuan sekolah kapan saja</li>
+                          <li>Mengutamakan calon Siswa terdekat kesekolah</li> 
+                        </ul>
+                      </div>
+                    </div>
+                  </div>     
+              </div>
+            </div>	      
       </div>
-      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeSection2Curve" role="presentation" aria-hidden="true">
-        <polygon points="1280 0 1280 70 0 70"></polygon>
-      </svg>
+     
 		</section>
 
 		<section class="home-section home-section-3">
 	    <div class="container">
-        <h2>Talk Less Do More</h2>
+        <h2>Informasi Dasar PPDB</h2>
         <div class="row">
           <div class="col-sm-4 mb-3">
             <div class="card text-white bg-primary h-100">
@@ -111,63 +144,33 @@
           </div><!-- /col -->
         </div><!-- /.row -->
 	    </div>
-      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeSection3Curve" role="presentation" aria-hidden="true">
-        <polygon points="1280 0 1280 70 0 70"></polygon>
-      </svg>
-		</section>
+    </section>
 
-		<footer class="footer">
+		<footer class="footer foothome">
       <div class="container mt-5">
-        <div class="row mb-4">
-          <div class="col-md-3 mb-3">
-            <h4 class="footer-title">Title One</h4>
-            <ul class="footer-nav">
+        <div class="row">
+          <div class="col-8">
+            <h4 class="footer-title text-dark">Title One</h4>
+            <ul class="footer-nav text-dark">
               <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
               <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
               <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
               <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
               <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
             </ul>
-          </div><!-- /col -->
-          <div class="col-md-3 mb-3">
-            <h4 class="footer-title">Title Two</h4>
-            <ul class="footer-nav">
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-            </ul>
-          </div><!-- /col -->
-          <div class="col-md-3 mb-3">
-            <h4 class="footer-title">Title Three</h4>
-            <ul class="footer-nav">
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-              <li class="footer-nav-item"><a href="#" class="footer-nav-link">Footer link</a></li>
-            </ul>
-          </div><!-- /col -->
-          <div class="col-md-3 mb-3">
-            <h4 class="footer-title">Title Four</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-          </div><!-- /col -->
-        </div><!-- /.row -->
+          </div>
+          <div class="col-4">
+              <h4 class="footer-title text-dark">Dinas Pendidikan dan Kebudayaan Provinsi Banten</h4>
+              <p>Kawasan Pusat Pemerintahan Provinsi Banten<br>JL. Syech Nawawi Al-Bantani - Curug - Palima<br>Kota Serang - Provinsi Banten<br>Telp/Fax : (0254)  267064 / 267065.</p>
+          </div>
+        </div>        
       </div><!-- /.container-fluid -->
     </footer>
 
-    <footer class="footer">
+    <footer class="footer darkgblue">
       <div class="container">
-        <ul class="footer-links text-center">
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-          <li><a href="#">Link 4</a></li>
-          <li><a href="#">Link 5</a></li>
-        </ul>
-        <div class="footer-description text-center">
-          <p><i class="fa fa-code" aria-hidden="true"></i> with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/bantenprov">@bantenprov</a></p>
+         <div class="footer-description text-center">
+          <p><i class="fa fa-code" aria-hidden="true"></i> Copyright: 2018 Design and Developed by <a href="https://github.com/bantenprov">@bantenprov</a></p>
         </div>
       </div><!-- /.container-fluid -->
     </footer>
@@ -187,17 +190,59 @@
 }
 .home-section-1a {
   position: relative;
-  padding-top: 30px;
+  padding-top: 60px;
   padding-bottom: 30px;
   color: #333;
   background-color: #E8EEEF;
+  }
+
+.home-section-2a {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  background-color: #5B7981;
+  }
+
+  .ratakirikanan {
+    text-align: justify;
+  }
+  .ratakiri {
+    text-align: left;
+  }
+
+  //imageresponsive
+  img {
+  vertical-align: middle;
+  }
+  .img-responsive,
+  .thumbnail > img,
+  .thumbnail a > img,
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .darkgblue{
+  background-color:#0F2028;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  }
+  .foothome{
+    background-color:#278da5;
+    padding-top: 20px;
+  padding-bottom: 20px;
   }
 </style>
 
 <script>
 import { mapGetters } from 'vuex';
+import Countdown from 'vuejs-countdown';
 
 export default {
+  components: { Countdown },
   computed: mapGetters({
     user: 'authUser',
     authenticated: 'authCheck'
@@ -232,11 +277,3 @@ export default {
   }
 }
 </script>
-<!--script>
-  //countdown.
-      import Countdown from 'vuejs-countdown'
-
-      export default {
-      components: { Countdown }
-    }
-</script-->

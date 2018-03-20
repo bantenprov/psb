@@ -1,12 +1,12 @@
 <template>
 	<div>
-    <div class="home-header">
+    <div class="home-header header-bgimage">
 
       <nav class="home-header-navbar navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
-          <router-link class="navbar-brand d-flex flex-row align-items-center text-uppercase" to="/" exact>
+          <router-link class="navbar-brand d-flex flex-row align-items-center text-uppercase" :to="{ name: 'home' }" exact>
             <img class="mr-2" src="/images/logo.png" width="36" height="36">
-            <span>PPDB 2018</span>
+            <span>PPDB BANTEN</span>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,8 +31,9 @@
       <div class="container">
         <div class="home-header-content d-flex flex-column justify-content-center py-5">
           <div>
-            <h1 class="home-header-title">PPDB 2018</h1>
-            <p class="home-header-description mb-5">PPDB 2018 adalah sebuah kecamatan di Kabupaten Serang, Provinsi Banten, Indonesia. Daerah ini sangat terkenal karena ulama besar, <strong>Syaikh Nawawi al-Bantani</strong>, guru bagi para ulama Indonesia dan guru besar di Mekkah, lahir di sini.</p>
+            <h1 class="home-header-title">PPDB <strong class="text-warning"> 2018</strong></h1>
+          <p class="home-header-description mb-5 wow fadeInUp">Pendaftaran Peserta Didik Baru <br>SMA SMK Negeri Provinsi Banten.</p>
+            <Countdown deadline="June 01, 2018"></Countdown>
             <p class="mb-0">
               <router-link class="btn btn-lg btn-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInLeft" :to="{ name: 'dashboard' }"><i class="fa fa-th-large" aria-hidden="true"></i> Dashboard</router-link>
               <router-link v-if="!authenticated" class="btn btn-lg btn-outline-light d-block d-sm-inline-block px-5 mx-2 mb-3 mb-sm-0 animated slideInRight" :to="{ name: 'login' }"><i class="fa fa-sign-in" aria-hidden="true"></i> Log In</router-link>
@@ -41,20 +42,32 @@
         </div>
       </div><!-- /.container -->
 
-      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeHeaderCurve" role="presentation" aria-hidden="true">
-        <polygon points="1280 0 1280 70 0 70"></polygon>
-      </svg>
+      
 	  </div><!-- /.banner -->
 
-		<section class="home-section home-section-1">
+		<section class="home-section home-section-1a">
 	    <div class="container">
-        <h2>Wilayah</h2>
-        <p class="lead">Terletak disekitar Sungai Cidurian yang bermuara ke Laut Jawa. Pada tahun 2010 wilayah ini terbagi menjadi beberapa desa.</p>
-        <img class="home-section-img" src="https://placehold.it/1200x630/777/eee/?text=IMAGE" alt="Image">
-	    </div>
-      <svg viewBox="0 0 1280 70" preserveAspectRatio="none" id="homeSection1Curve" role="presentation" aria-hidden="true">
-        <polygon points="1280 0 1280 70 0 70"></polygon>
-      </svg>
+        <h2>Asas PPDB</h2>
+        <p class="lead">Pendidikan merupakan hak setiap warga negara yang harus dipenuhi pemerintah dengan tidak memandang perbedaan suku, ras, agama, maupun ekonomi.</p>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-bullseye ikon"></i>
+            <h4><strong>Objektif</strong></h4>
+            <p>Penerimaan Peserta Didik Baru harus memenuhi ketentuan umum serta sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
+          </div>
+          <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="400ms"> <i class="fa fa-search ikon"></i>
+            <h4><strong>Transparan</strong></h4>
+            <p>Pelaksanaan penerimaan Peserta Didik Baru bersifat terbuka dan dapat diketahui oleh masyarakat, untuk menghindari penyimpangan yang mungkin terjadi.</p>
+          </div>
+          <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="600ms"> <i class="fa fa-check-square ikon"></i>
+            <h4><strong>Akuntabel</strong></h4>
+            <p>Proses penerimaan Peserta Didik Baru dapat dipertanggung jawabkan baik prosedur maupun hasilnya.</p>
+          </div>
+          <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="800ms"> <i class="fa fa-balance-scale ikon"></i>
+            <h4><strong>Berkeadilan</strong></h4>
+            <p>Penerimaan Peserta Didik Baru tidak membeda-bedakan ras, suku, agama, tingkat ekonomi, maupun keterbatasan lainnya serta sesuai ketentuan umum dan perundang-undangan yang berlaku.</p>
+          </div>
+        </div>        
+	    </div>      
 		</section>
 
 		<section class="home-section home-section-2">
@@ -161,6 +174,25 @@
 
 	</div>
 </template>
+<style scoped>
+.header-bgimage {
+  background: url('/images/banner-ppdb-2.jpg') no-repeat bottom center;
+  background-attachment: fixed !important; 
+  background-size: cover;
+}
+.ikon {
+  font-size: 30px;
+  padding: 5px;
+  color: #7891a3;
+}
+.home-section-1a {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #333;
+  background-color: #E8EEEF;
+  }
+</style>
 
 <script>
 import { mapGetters } from 'vuex';
@@ -189,14 +221,22 @@ export default {
       scrollpos = window.scrollY;
 
       if (scrollpos > 78) {
-        header.classList.remove('bg-transparent');
-        header.classList.add('fixed-top', 'slideInDown', 'bg-dark');
+        header.classList.remove('navbar-dark','bg-transparent');
+        header.classList.add('border-bottom','border-info','navbar-light','fixed-top', 'slideInDown', 'bg-light');
       } else {
-        header.classList.remove('fixed-top', 'slideInDown');
-        header.classList.add('bg-transparent');
-        header.classList.remove('bg-dark');
+        header.classList.remove('border-bottom','border-info','fixed-top', 'slideInDown', 'navbar-light');
+        header.classList.add('navbar-dark','bg-transparent');
+        header.classList.remove('bg-light');
       }
     });
   }
 }
 </script>
+<!--script>
+  //countdown.
+      import Countdown from 'vuejs-countdown'
+
+      export default {
+      components: { Countdown }
+    }
+</script-->
